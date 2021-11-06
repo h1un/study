@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             // 디자인
             primarySwatch: Colors.lightBlue),
-        home: const MyHomePage() // 앱이 정상적으로 실행되었을때 가장 먼저 화면에 보여주는 경로
+        home: const MyCard() // 앱이 정상적으로 실행되었을때 가장 먼저 화면에 보여주는 경로
         );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class MyCard extends StatelessWidget {
+  const MyCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,17 @@ class MyHomePage extends StatelessWidget {
       // 빈도화지 같은 위젯
       appBar: AppBar(
         title: Text('First App'), // 앱바에 표시되는 이름
+        centerTitle: true,
+        backgroundColor: Colors.lightGreen,
+        elevation: 0.0, //높이 - 그림자 없애기
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
         child: Column(
-          children: [Text('Hello'), Text('Future')],
-        ), // 모든 위젯을 세로로 배치
-      ),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Text('Hello'), Text('Futere')],
+        ),
+      ), // 모든 위젯을 세로로 배치
     );
   }
 }
