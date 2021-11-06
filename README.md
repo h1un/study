@@ -1,16 +1,22 @@
 # study
 
-A new Flutter project.
 
-## Getting Started
+------------
+## WidGet 위젯
+1. stateless  이전 상호작용의 어떤 값도 저장하지 않음 (형태가 없는 정적인 위젯)
+2. stateful value 값을 지속적으로 추적 보존 (계속 움직이나 변화가 있는 위젯)
+3. Inherited
+------------
 
-This project is a starting point for a Flutter application.
+- MyApp [stateless 함수]
+    - MaterialApp
+        - MyHomePage
+            - Scaffold
+                - AppBar
+                  - Text
+                - Center
+                    - Column
+                        - Image
+                        - TextField
+                        - Button
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
