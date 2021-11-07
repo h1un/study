@@ -9,41 +9,54 @@
 3. Inherited
 
 ------------
-
-- MyApp()
-    - MaterialApp()
-      title : [앱이름] <br>
-      home :
-        - Scaffold() <br>
-          appBar :
-            - AppBar() <br>
-              title : Text('[페이지이름]') <br>
-              leading : IconButton() [앱바 타이틀 왼쪽]<br>
-              action : IconButton() [앱바 타이틀 오른쪽]
-              - .
-                icon : Icon(Icons.[아이콘])
-                onPressed : [함수의 형태로 일반 버튼이나 아이콘 버튼을 터치했을때 일어나는 이벤트]
-              body :
+    - MyApp()
+        - MaterialApp()
+            title : 앱이름
+            home :
+            - Scaffold()
+                appBar :
+                - AppBar()
+                    title : Text('페이지이름')
+                    leading : IconButton( icon : Icons.아이콘) - 앱바 타이틀 왼쪽 — Drawar 는 새탭
+                    action : IconButton(icon : Icons.아이콘)- 앱바 타이틀 오른쪽
+                drawer :
+                - Drawer() - 앱바 타이틀 왼쪽의 버튼을 클릭했을때의 새탭
+                    child :
+                    - ListView()
+                        children : []
+                        - UserAccountsDrawerHeader() - 계정 정보
+                            currentAccountPicture : - 로그인 계정 이미지
+                                -CircleAvatar() : 이미지 동그랗게
+                            otherAccountsPictures : [] - 다른 로그인 계정 이미지
+                            accountName : Text('이름')
+                            accountEmail : Text('이메일')
+                            decoration :
+                            - BoxDecoration() -계정정보 박스 꾸미기
+                                color :
+                                borderRadius : BorderRadius.only(
+                                  bottomRight: Radius.circular(40)
+                                )
+                        - ListTitle() - 메뉴
+                            leading: Icons.아이콘 - 메뉴 왼쪽
+                            trailing : Icons.아이콘 - 메뉴 오른쪽
+                body :
                 - Padding()
                 - Center() - 중앙 정렬
-                - Column() - 세로 정렬
-                - Row() - 가로 정렬
-                - Stack() - 위젯을 쌓아올릴때 <br>
-                  child :
-                    - .<br>
-                      chlidren :
-                        - Text() <br>
-                          style :  TextStyle()
+                    child :
+                    - Column() - 세로 정렬
+                    - Row() - 가로 정렬
+                        chlidren : []
+                        - Text()
+                            style :  TextStyle()
                         - Image()
-                        - CircleAvatar() <br>
-                          backgraoundImage : AssetImage('[경로]') <br>
-                          radius : [숫자] <br>
+                        - CircleAvatar()
+                            backgraoundImage : AssetImage('경로')
+                            radius : [숫자]
                         - SizeBox() - 빈박스
                         - Button()
-                        - Divder() - 선 <br>
-                          thickness : [숫자] - 두께 <br>
-                          endIndent : [숫자] - 끝에서부터늬 padding <br>
-
+                        - Divder() - 선
+                            thickness : [숫자] - 두께
+                            endIndent : [숫자] - 끝에서부터늬 padding
 ----
 
 ## 이미지 넣는법
