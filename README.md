@@ -45,6 +45,10 @@ https://flutter.dev/
                 - Center() - 중앙 정렬
                     child :
                     - Column() - 세로 정렬
+                        mainAxisAlignemt : MainAxisAlignmetn. - 정렬
+                        crossAxisAlignemt : 
+                        verticalDirextion : VerticalDirection.down - 밑에서부터 정렬해서 밑에서부터 표시
+                                            VerticalDirection.up - 위에서부터 정렬해서 위에서 표시
                     - Row() - 가로 정렬
                         chlidren : []
                         - Text()
@@ -77,4 +81,16 @@ pubspec.yaml <br>
 - 현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라
 //비슷한거 Something.of()
         Theme.of()
-  
+ 
+## Navigator
+###Route
+- 하나의 페이지
+###Stack
+Navigator.push( context , MaterialPageRoute(builder: (context) => 이동 페이지()) )
+###
+빌더는 일종의 안전장치 <br>
+빌더에서 제공되는 컨텍스트는 자동으로 할당됨 사용할 필요가 없으면 사용안해도 됨 <br>
+Navigator.push( context , MaterialPageRoute(builder: (_) => 이동 페이지()) ) 로 사용가능
+
+###
+appBar 를 생성하먄 자동적으로 뒤로가기 버튼이 만들어지지만 draw를 사용하면 직접 만들어줘야함 
