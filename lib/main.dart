@@ -98,6 +98,28 @@ class MyPage extends StatelessWidget {
           ],
         ),
       ),
+      body: Center(
+        child: FlatButton(
+          color: Colors.lightBlue[200],
+          onPressed: () {
+            final snackBar = SnackBar(
+              backgroundColor: Colors.lightBlue[100],
+              content: const Text('Yay! A SnackBar!'),
+              action: SnackBarAction( // 스낵바 액션
+                label: 'Undo',
+                onPressed: () {
+                  // Some code to undo the change.
+                },
+              ),
+            );
+
+            // Find the ScaffoldMessenger in the widget tree
+            // and use it to show a SnackBar.
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
+          child: const Text('Show SnackBar'),
+        ),
+      ),
     );
   }
 }

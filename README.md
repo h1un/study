@@ -1,5 +1,6 @@
 # study
-
+https://flutter.dev/
+플러터 홈페이지
 ------------
 
 ## WidGet 위젯
@@ -66,3 +67,14 @@ pubspec.yaml <br>
     flutter : <br>
         <tab>assets : <br>
             - 이미지경로/파일
+----
+
+## BuildContext
+- widget tree 에서 현재 widget의 위치를 알 수 있는 정보
+- 이 BuildContext는 stateless 위젯이나 state 빌드 메서드에 의해서 리턴 된 위젯의 부모가 된다
+
+### Scaffold.of(context) method
+- 현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라
+//비슷한거 Something.of()
+        Theme.of()
+  
