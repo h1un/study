@@ -92,5 +92,28 @@ Navigator.push( context , MaterialPageRoute(builder: (context) => 이동 페이�
 빌더에서 제공되는 컨텍스트는 자동으로 할당됨 사용할 필요가 없으면 사용안해도 됨 <br>
 Navigator.push( context , MaterialPageRoute(builder: (_) => 이동 페이지()) ) 로 사용가능
 
-###
+### **
 appBar 를 생성하먄 자동적으로 뒤로가기 버튼이 만들어지지만 draw를 사용하면 직접 만들어줘야함 
+
+### 라우터 
+        class MyApp extends StatelessWidget {
+                const MyApp({Key? key}) : super(key: key);
+                
+                @override
+                Widget build(BuildContext context) {
+                return MaterialApp(
+                        title: 'AppBar',
+                        theme: ThemeData(primarySwatch: Colors.red),
+                        initialRoute: '/',
+                        routes: {
+                        '/' : (context)=>MyPage(),
+                        '/first' : (context) => FirstPage(),
+                        '/second' : (context) => FirstPage()
+                        },
+                    );
+                }
+        }
+
+-
+        
+        Navigator.pushNamed(context, '/second');
